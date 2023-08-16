@@ -2,7 +2,7 @@ import Button from "../utilities/Button";
 import InputField from "../utilities/InputField";
 import { useState } from "react";
 
-function Personal() {
+function PersonalInput() {
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
@@ -24,44 +24,61 @@ function Personal() {
     setAddress(e.target.value);
   };
 
+  const handleButtonClick = (e) => {
+    e.preventDefault();
+  };
+
   return (
     <>
       <h2>Personal Details</h2>
-      <InputField
-        label="Full Name: "
-        id="name"
-        type="text"
-        value={fullName}
-        placeholder=""
-        onChange={handleNameChange}
+      <div id="nameField" className="personalDetails">
+        <InputField
+          label="Full Name: "
+          id="name"
+          type="text"
+          value={fullName}
+          placeholder=""
+          onChange={handleNameChange}
+        />
+      </div>
+      <div id="emailField" className="personalDetails">
+        <InputField
+          label="Email: "
+          id="email"
+          type="text"
+          value={email}
+          placeholder=""
+          onChange={handleEmailChange}
+        />
+      </div>
+      <div id="phoneInput" className="personalDetails">
+        <InputField
+          label="Phone: "
+          id="phone"
+          type="text"
+          value={phone}
+          placeholder=""
+          onChange={handlePhoneChange}
+        />
+      </div>
+      <div id="addressInput" className="personalDetails">
+        <InputField
+          label="Address: "
+          id="address"
+          type="text"
+          value={address}
+          placeholder=""
+          onChange={handleAddressChange}
+        />
+      </div>
+      <Button
+        id="submitBtn"
+        type="submit"
+        text="Save"
+        onClick={handleButtonClick}
       />
-      <InputField
-        label="Email: "
-        id="email"
-        type="text"
-        value={email}
-        placeholder=""
-        onChange={handleEmailChange}
-      />
-      <InputField
-        label="Phone: "
-        id="phone"
-        type="text"
-        value={phone}
-        placeholder=""
-        onChange={handlePhoneChange}
-      />
-      <InputField
-        label="Address: "
-        id="address"
-        type="text"
-        value={address}
-        placeholder=""
-        onChange={handleAddressChange}
-      />
-      <Button type="submit" text="Save" />
     </>
   );
 }
 
-export default Personal;
+export default PersonalInput;
