@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
-function Button({ id, type, text, onClick }) {
+function Button({ className, type, text, onClick }) {
   return (
-    <button id={id} type={type} onClick={onClick}>
+    <button className={className} type={type} onClick={onClick}>
       {text}
     </button>
   );
