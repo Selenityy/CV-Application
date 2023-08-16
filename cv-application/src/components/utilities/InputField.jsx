@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 function InputField({ value, label, id, type, placeholder, onChange }) {
   return (
-    <div>
+    <>
       <label htmlFor={id}>{label}</label>
       <input
         id={id}
@@ -10,7 +10,7 @@ function InputField({ value, label, id, type, placeholder, onChange }) {
         placeholder={placeholder}
         onChange={onChange}
       />
-    </div>
+    </>
   );
 }
 
