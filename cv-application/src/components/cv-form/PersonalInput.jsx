@@ -72,7 +72,7 @@ function PersonalInput() {
         />
       </div>
       <Button
-        id="submitBtn"
+        className="submitBtn"
         type="submit"
         text="Save"
         onClick={handleButtonClick}
