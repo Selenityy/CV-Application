@@ -1,4 +1,8 @@
-import PersonalInput from "./cv-form/personal";
+import EducationInput from "./cv-form/EducationInput";
+import ExperienceInput from "./cv-form/ExperienceInput";
+import PersonalInput from "./cv-form/PersonalInput";
+import SkillInput from "./cv-form/SkillInput";
+import SummaryInput from "./cv-form/SummaryInput";
 
 function UserDetails() {
   return (
@@ -6,14 +10,18 @@ function UserDetails() {
       <section id="personalInput">
         <PersonalInput />
       </section>
-      <section id="summaryInput"></section>
-      <section id="skillsInput"></section>
-      <section id="experienceInput"></section>
-      <section id="educationInput"></section>
-      {/* <SummaryInput />
-            <SkillsInput />
-            <ExperienceInput />
-            <EducationInput /> */}
+      <section id="summaryInput">
+        <SummaryInput />
+      </section>
+      <section id="skillsInput">
+        <SkillInput />
+      </section>
+      <section id="experienceInput">
+        <ExperienceInput />
+      </section>
+      <section id="educationInput">
+        <EducationInput />
+      </section>
     </>
   );
 }
