@@ -1,8 +1,8 @@
 /* eslint-disable react/prop-types */
-function InputField({ value, label, id, type, placeholder, onChange }) {
+function InputField({ value, label, id, htmlFor, type, placeholder, onChange }) {
   return (
     <>
-      <label htmlFor={id}>{label}</label>
+      <label htmlFor={htmlFor}>{label}</label>
       <input
         id={id}
         type={type}

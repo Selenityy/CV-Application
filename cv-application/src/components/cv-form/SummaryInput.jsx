@@ -1,18 +1,7 @@
-import { useState } from "react";
-import Button from "../utilities/Button";
+/* eslint-disable react/prop-types */
 import InputField from "../utilities/InputField";
 
-function SummaryInput() {
-  const [summary, setSummary] = useState("");
-
-  const handleSummaryChange = (e) => {
-    setSummary(e.target.value);
-  };
-
-  const handleButtonClick = (e) => {
-    e.preventDefault();
-  };
-
+function SummaryInput({ summary, onSummaryChange }) {
   return (
     <>
       <h2>Summary Details</h2>
@@ -20,18 +9,13 @@ function SummaryInput() {
         <InputField
           label="Summary: "
           id="summary"
+          htmlFor="summary"
           type="text"
           value={summary}
           placeholder=""
-          onChange={handleSummaryChange}
+          onChange={onSummaryChange}
         />
       </div>
-      <Button
-        className="submitBtn"
-        type="submit"
-        text="Save"
-        onClick={handleButtonClick}
-      />
     </>
   );
 }

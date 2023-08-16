@@ -1,17 +1,18 @@
+/* eslint-disable react/prop-types */
 import EducationDetails from "./resume-display/EducationDetails";
 import ExperienceDetails from "./resume-display/ExperienceDetails";
 import PersonalDetails from "./resume-display/PersonalDetails";
 import SkillDetails from "./resume-display/SkillsDetails";
 import SummaryDetails from "./resume-display/SummaryDetails";
 
-function ResumeDetails() {
+function ResumeDetails({ summary }) {
   return (
     <>
       <section id="personalDetails">
         <PersonalDetails />
       </section>
       <section id="summaryDetails">
-        <SummaryDetails />
+        <SummaryDetails summary={summary} />
       </section>
       <section id="skillDetails">
         <SkillDetails />
