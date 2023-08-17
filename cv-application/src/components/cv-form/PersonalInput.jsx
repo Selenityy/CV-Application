@@ -3,21 +3,38 @@ import Button from "../utilities/Button";
 import InputField from "../utilities/InputField";
 import { useState } from "react";
 
-function PersonalInput({ onNameChange, onAddressChange }) {
+function PersonalInput({
+  onNameChange,
+  onPhoneChange,
+  onAddressChange,
+  onEmailChange,
+}) {
   const [name, setName] = useState("");
   const [address, setAddress] = useState("");
+  const [phone, setPhone] = useState("");
+  const [email, setEmail] = useState("");
 
   const handleNameChange = (e) => {
     setName(e.target.value);
+  };
+
+  const handlePhoneChange = (e) => {
+    setPhone(e.target.value);
   };
 
   const handleAddressChange = (e) => {
     setAddress(e.target.value);
   };
 
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+  };
+
   const handleButtonClick = () => {
     onNameChange(name);
+    onPhoneChange(phone);
     onAddressChange(address);
+    onEmailChange(email);
   };
 
   return (
@@ -32,6 +49,28 @@ function PersonalInput({ onNameChange, onAddressChange }) {
           value={name}
           placeholder=""
           onChange={handleNameChange}
+        />
+      </div>
+      <div id="emailField" className="personalDetails">
+        <InputField
+          label="Email: "
+          id="email"
+          htmlFor="email"
+          type="text"
+          value={email}
+          placeholder=""
+          onChange={handleEmailChange}
+        />
+      </div>
+      <div id="phoneField" className="personalDetails">
+        <InputField
+          label="Phone Number: "
+          id="phone"
+          htmlFor="phone"
+          type="text"
+          value={phone}
+          placeholder=""
+          onChange={handlePhoneChange}
         />
       </div>
       <div id="addressField" className="personalDetails">

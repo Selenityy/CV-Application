@@ -5,13 +5,21 @@ import PersonalInput from "./cv-form/PersonalInput";
 import SkillInput from "./cv-form/SkillInput";
 import SummaryInput from "./cv-form/SummaryInput";
 
-function UserDetails({ onNameChange, onAddressChange, onSummaryChange }) {
+function UserDetails({
+  onNameChange,
+  onPhoneChange,
+  onAddressChange,
+  onEmailChange,
+  onSummaryChange,
+}) {
   return (
     <>
       <section id="personalInput">
-        <PersonalInput 
-            onNameChange={onNameChange}
-            onAddressChange={onAddressChange}
+        <PersonalInput
+          onNameChange={onNameChange}
+          onPhoneChange={onPhoneChange}
+          onAddressChange={onAddressChange}
+          onEmailChange={onEmailChange}
         />
       </section>
       <section id="summaryInput">

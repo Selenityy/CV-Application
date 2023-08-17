@@ -5,15 +5,25 @@ import { useState } from "react";
 
 function App() {
   const [fullNameInput, setFullNameInput] = useState("");
+  const [phoneInput, setPhoneInput] = useState("");
   const [addressInput, setAddressInput] = useState("");
+  const [emailInput, setEmailInput] = useState("");
   const [summaryInput, setSummaryInput] = useState("");
 
   const handleNameChange = (newName) => {
     setFullNameInput(newName);
   };
 
+  const handlePhoneChange = (newPhone) => {
+    setPhoneInput(newPhone);
+  };
+
   const handleAddressChange = (newAddress) => {
     setAddressInput(newAddress);
+  };
+
+  const handleEmailChange = (newEmail) => {
+    setEmailInput(newEmail);
   };
 
   const handleSummaryChange = (newSummary) => {
@@ -28,17 +38,23 @@ function App() {
           <UserDetails
             name={fullNameInput}
             onNameChange={handleNameChange}
+            phone={phoneInput}
+            onPhoneChange={handlePhoneChange}
             address={addressInput}
             onAddressChange={handleAddressChange}
+            email={emailInput}
+            onEmailChange={handleEmailChange}
             summary={summaryInput}
             onSummaryChange={handleSummaryChange}
           />
         </div>
         <div id="resumeDisplay">
           <ResumeDetails
-            summary={summaryInput}
             fullName={fullNameInput}
+            phone={phoneInput}
             address={addressInput}
+            email={emailInput}
+            summary={summaryInput}
           />
         </div>
       </div>
