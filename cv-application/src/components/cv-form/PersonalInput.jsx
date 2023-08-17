@@ -3,15 +3,21 @@ import Button from "../utilities/Button";
 import InputField from "../utilities/InputField";
 import { useState } from "react";
 
-function PersonalInput({ onNameChange }) {
+function PersonalInput({ onNameChange, onAddressChange }) {
   const [name, setName] = useState("");
+  const [address, setAddress] = useState("");
 
   const handleNameChange = (e) => {
     setName(e.target.value);
   };
 
+  const handleAddressChange = (e) => {
+    setAddress(e.target.value);
+  };
+
   const handleButtonClick = () => {
     onNameChange(name);
+    onAddressChange(address);
   };
 
   return (
@@ -26,6 +32,17 @@ function PersonalInput({ onNameChange }) {
           value={name}
           placeholder=""
           onChange={handleNameChange}
+        />
+      </div>
+      <div id="addressField" className="personalDetails">
+        <InputField
+          label="Address: "
+          id="address"
+          htmlFor="address"
+          type="text"
+          value={address}
+          placeholder=""
+          onChange={handleAddressChange}
         />
       </div>
       <Button

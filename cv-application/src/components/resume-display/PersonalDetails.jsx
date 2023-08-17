@@ -1,23 +1,32 @@
 /* eslint-disable react/prop-types */
 import { useEffect, useState } from "react";
 
-function PersonalDetails({ fullName }) {
-  const [placeholder, setPlaceholder] = useState("Full Name");
+function PersonalDetails({ fullName, address }) {
+  const [placeholderName, setPlaceholderName] = useState("Full Name");
+  const [placeholderAddress, setPlaceholderAddress] = useState("Address");
 
   useEffect(() => {
     if (fullName) {
-      setPlaceholder(fullName);
+      setPlaceholderName(fullName);
     } else {
-      setPlaceholder("Full Name");
+      setPlaceholderName("Full Name");
     }
   }, [fullName]);
 
+  useEffect(() => {
+    if (address) {
+      setPlaceholderAddress(address);
+    } else {
+      setPlaceholderAddress("Address");
+    }
+  }, [address]);
+
   return (
     <>
-      <h2>{placeholder}</h2>
+      <h2>{placeholderName}</h2>
       <h3>email</h3>
       <h3>phone</h3>
-      <h3>address</h3>
+      <h3>{placeholderAddress}</h3>
     </>
   );
 }

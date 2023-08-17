@@ -4,10 +4,19 @@ import ResumeDetails from "./components/ResumeDetails";
 import { useState } from "react";
 
 function App() {
+  const [fullNameInput, setFullNameInput] = useState("");
+  const [addressInput, setAddressInput] = useState("");
   const [summaryInput, setSummaryInput] = useState("");
 
-  const handleSummaryChange = (e) => {
-    const newSummary = e.target.value;
+  const handleNameChange = (newName) => {
+    setFullNameInput(newName);
+  };
+
+  const handleAddressChange = (newAddress) => {
+    setAddressInput(newAddress);
+  };
+
+  const handleSummaryChange = (newSummary) => {
     setSummaryInput(newSummary);
   };
 
@@ -17,12 +26,20 @@ function App() {
       <div id="content">
         <div id="userInputs">
           <UserDetails
+            name={fullNameInput}
+            onNameChange={handleNameChange}
+            address={addressInput}
+            onAddressChange={handleAddressChange}
             summary={summaryInput}
             onSummaryChange={handleSummaryChange}
           />
         </div>
         <div id="resumeDisplay">
-          <ResumeDetails summary={summaryInput} />
+          <ResumeDetails
+            summary={summaryInput}
+            fullName={fullNameInput}
+            address={addressInput}
+          />
         </div>
       </div>
     </>
