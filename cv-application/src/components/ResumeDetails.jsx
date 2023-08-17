@@ -5,11 +5,11 @@ import PersonalDetails from "./resume-display/PersonalDetails";
 import SkillDetails from "./resume-display/SkillsDetails";
 import SummaryDetails from "./resume-display/SummaryDetails";
 
-function ResumeDetails({ summary }) {
+function ResumeDetails({ fullName, summary }) {
   return (
     <>
       <section id="personalDetails">
-        <PersonalDetails />
+        <PersonalDetails fullName={fullName} />
       </section>
       <section id="summaryDetails">
         <SummaryDetails summary={summary} />
