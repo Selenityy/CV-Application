@@ -5,38 +5,49 @@ import InputField from "../utilities/InputField";
 import { v4 as uuidv4 } from "uuid";
 
 function SkillInput({ onSkillAdd }) {
-  const [skillInput, setSkillInput] = useState("");
-  const [skillListInput, setSkillListInput] = useState([]);
+  const [skillInputs, setSkillInputs] = useState([{ id: uuidv4(), skill: "" }]);
 
-  const handleSkillChange = (e) => {
-    setSkillInput(e.target.value);
+  const handleSkillChange = (e, index) => {
+    const updatedInputs = [...skillInputs];
+    updatedInputs[index].skill = e.target.value;
+    setSkillInputs(updatedInputs);
   };
 
-  const handleButtonClick = () => {
-    const newSkill = { id: uuidv4(), skill: skillInput };
-    setSkillListInput([...skillListInput, newSkill]);
-    onSkillAdd(newSkill); // Notify the parent component about the new skill
-    setSkillInput(""); // Clear the input field after adding skill
+  const handleAddSkill = () => {
+    setSkillInputs([...skillInputs, { id: uuidv4(), skill: "" }]);
+  };
+
+  const handleSaveSkills = () => {
+    const existingSkills = skillInputs.filter((skill) => skill.skill !== "");
+    onSkillAdd(existingSkills);
   };
 
   return (
     <>
       <h2>Skill Details</h2>
-      <div id="skillField" className="skillDetails">
-        <InputField
-          label="Skill: "
-          id=""
-          type="text"
-          value={skillInput}
-          placeholder=""
-          onChange={handleSkillChange}
-        />
-      </div>
+      {skillInputs.map((skillInput, index) => (
+        <div key={skillInput.id} className="skillDetails">
+          <InputField
+            label="Skill: "
+            id={skillInput.id}
+            type="text"
+            value={skillInput.skill}
+            placeholder=""
+            onChange={(e) => handleSkillChange(e, index)}
+          />
+        </div>
+      ))}
+      <Button
+        className="submitBtn"
+        type="submit"
+        text="+ Skill"
+        onClick={handleAddSkill}
+      />
       <Button
         className="submitBtn"
         type="submit"
         text="Save"
-        onClick={handleButtonClick}
+        onClick={handleSaveSkills}
       />
     </>
   );

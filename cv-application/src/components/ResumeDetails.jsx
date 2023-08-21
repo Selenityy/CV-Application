@@ -11,7 +11,6 @@ function ResumeDetails({
   address,
   email,
   summary,
-  skill,
   skillList,
 }) {
   return (
@@ -28,7 +27,7 @@ function ResumeDetails({
         <SummaryDetails summary={summary} />
       </section>
       <section id="skillDetails">
-        <SkillDetails skill={skill} skillList={skillList} />
+        <SkillDetails skillList={skillList} />
       </section>
       <section id="experienceDetails">
         <ExperienceDetails />

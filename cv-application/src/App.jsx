@@ -9,7 +9,6 @@ function App() {
   const [addressInput, setAddressInput] = useState("");
   const [emailInput, setEmailInput] = useState("");
   const [summaryInput, setSummaryInput] = useState("");
-  const [skill, setSkill] = useState("");
   const [skillList, setSkillList] = useState([]);
 
   const handleNameChange = (newName) => {
@@ -32,9 +31,8 @@ function App() {
     setSummaryInput(newSummary);
   };
 
-  const handleAddSkill = (newSkill) => {
-    setSkill(newSkill);
-    setSkillList([...skillList, newSkill])
+  const handleAddSkill = (newSkills) => {
+    setSkillList([...newSkills]);
   };
 
   return (
@@ -53,7 +51,6 @@ function App() {
             onEmailChange={handleEmailChange}
             summary={summaryInput}
             onSummaryChange={handleSummaryChange}
-            // onSkillChange={handleSkillChange}
             onSkillAdd={handleAddSkill}
           />
         </div>
@@ -65,7 +62,6 @@ function App() {
             email={emailInput}
             summary={summaryInput}
             skillList={skillList}
-            skill={skill}
           />
         </div>
       </div>
