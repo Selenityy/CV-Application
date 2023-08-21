@@ -11,6 +11,8 @@ function UserDetails({
   onAddressChange,
   onEmailChange,
   onSummaryChange,
+  // onSkillChange,
+  onSkillAdd,
 }) {
   return (
     <>
@@ -26,7 +28,7 @@ function UserDetails({
         <SummaryInput onSummaryChange={onSummaryChange} />
       </section>
       <section id="skillsInput">
-        <SkillInput />
+        <SkillInput onSkillAdd={onSkillAdd} />
       </section>
       <section id="experienceInput">
         <ExperienceInput />

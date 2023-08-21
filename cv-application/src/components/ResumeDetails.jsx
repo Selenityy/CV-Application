@@ -5,17 +5,30 @@ import PersonalDetails from "./resume-display/PersonalDetails";
 import SkillDetails from "./resume-display/SkillsDetails";
 import SummaryDetails from "./resume-display/SummaryDetails";
 
-function ResumeDetails({ fullName, phone, address, email, summary }) {
+function ResumeDetails({
+  fullName,
+  phone,
+  address,
+  email,
+  summary,
+  skill,
+  skillList,
+}) {
   return (
     <>
       <section id="personalDetails">
-        <PersonalDetails fullName={fullName} phone={phone} address={address} email={email} />
+        <PersonalDetails
+          fullName={fullName}
+          phone={phone}
+          address={address}
+          email={email}
+        />
       </section>
       <section id="summaryDetails">
         <SummaryDetails summary={summary} />
       </section>
       <section id="skillDetails">
-        <SkillDetails />
+        <SkillDetails skill={skill} skillList={skillList} />
       </section>
       <section id="experienceDetails">
         <ExperienceDetails />

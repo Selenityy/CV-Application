@@ -1,16 +1,22 @@
+/* eslint-disable react/prop-types */
 import { useState } from "react";
 import Button from "../utilities/Button";
 import InputField from "../utilities/InputField";
+import { v4 as uuidv4 } from "uuid";
 
-function SkillInput() {
-  const [skill, setSkill] = useState("");
+function SkillInput({ onSkillAdd }) {
+  const [skillInput, setSkillInput] = useState("");
+  const [skillListInput, setSkillListInput] = useState([]);
 
   const handleSkillChange = (e) => {
-    setSkill(e.target.value);
+    setSkillInput(e.target.value);
   };
 
-  const handleButtonClick = (e) => {
-    e.preventDefault();
+  const handleButtonClick = () => {
+    const newSkill = { id: uuidv4(), skill: skillInput };
+    setSkillListInput([...skillListInput, newSkill]);
+    onSkillAdd(newSkill); // Notify the parent component about the new skill
+    setSkillInput(""); // Clear the input field after adding skill
   };
 
   return (
@@ -21,7 +27,7 @@ function SkillInput() {
           label="Skill: "
           id=""
           type="text"
-          value={skill}
+          value={skillInput}
           placeholder=""
           onChange={handleSkillChange}
         />
