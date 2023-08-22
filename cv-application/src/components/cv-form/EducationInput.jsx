@@ -1,81 +1,82 @@
+/* eslint-disable react/prop-types */
 import { useState } from "react";
 import Button from "../utilities/Button";
 import InputField from "../utilities/InputField";
+import { v4 as uuidv4 } from "uuid";
 
-function EducationInput() {
-  const [schoolName, setSchoolName] = useState("");
-  const [degree, setDegree] = useState("");
-  const [schoolStartDate, setSchoolStartDate] = useState("");
-  const [schoolEndDate, setSchoolEndDate] = useState("");
+function EducationInput({ onSchoolAdd }) {
+  const [schoolInputs, setSchoolInputs] = useState([
+    { id: uuidv4(), name: "", degree: "", start: "", end: "" },
+  ]);
 
-  const handleSchoolNameChange = (e) => {
-    setSchoolName(e.target.value);
+  const handleSchoolChange = (e, index, property) => {
+    const updatedSchools = [...schoolInputs];
+    updatedSchools[index][property] = e.target.value;
+    setSchoolInputs(updatedSchools);
   };
 
-  const handleDegreeChange = (e) => {
-    setDegree(e.target.value);
+  const handleAddSchool = () => {
+    setSchoolInputs([
+      ...schoolInputs,
+      { id: uuidv4(), name: "", degree: "", start: "", end: "" },
+    ]);
   };
 
-  const handleSchoolStartDateChange = (e) => {
-    setSchoolStartDate(e.target.value);
-  };
-
-  const handleSchoolEndDateChange = (e) => {
-    setSchoolEndDate(e.target.value);
-  };
-
-  const handleButtonClick = (e) => {
-    e.preventDefault();
+  const handleSaveSchools = () => {
+    const existingSchools = schoolInputs.filter((school) => school.name !== "");
+    onSchoolAdd(existingSchools);
   };
 
   return (
     <>
       <h2>Education Details</h2>
-      <div id="schoolField" className="educationDetails">
-        <InputField
-          label="School Name: "
-          id="schoolName"
-          type="text"
-          value={schoolName}
-          placeholder=""
-          onChange={handleSchoolNameChange}
-        />
-      </div>
-      <div id="degreeField" className="educationDetails">
-        <InputField
-          label="Degree: "
-          id="degree"
-          type="text"
-          value={degree}
-          placeholder=""
-          onChange={handleDegreeChange}
-        />
-      </div>
-      <div id="schoolStartDateField" className="educationDetails">
-        <InputField
-          label="Start Date: "
-          id="schoolStartDate"
-          type="text"
-          value={schoolStartDate}
-          placeholder=""
-          onChange={handleSchoolStartDateChange}
-        />
-      </div>
-      <div id="schoolEndDateField" className="educationDetails">
-        <InputField
-          label="End Date: "
-          id="schoolEndDate"
-          type="text"
-          value={schoolEndDate}
-          placeholder=""
-          onChange={handleSchoolEndDateChange}
-        />
-      </div>
+      {schoolInputs.map((schoolInput, index) => (
+        <div key={schoolInput.id} className="educationDetails">
+          <InputField
+            label="School Name: "
+            id={`${schoolInput.id}-name`}
+            type="text"
+            value={schoolInput.name}
+            placeholder=""
+            onChange={(e) => handleSchoolChange(e, index, "name")}
+          />
+          <InputField
+            label="Degree: "
+            id={`${schoolInput.id}-degree`}
+            type="text"
+            value={schoolInput.degree}
+            placeholder=""
+            onChange={(e) => handleSchoolChange(e, index, "degree")}
+          />
+          <InputField
+            label="Start Date: "
+            id={`${schoolInput.id}-start`}
+            type="text"
+            value={schoolInput.start}
+            placeholder=""
+            onChange={(e) => handleSchoolChange(e, index, "start")}
+          />
+          <InputField
+            label="End Date: "
+            id={`${schoolInput.id}-end`}
+            type="text"
+            value={schoolInput.end}
+            placeholder=""
+            onChange={(e) => handleSchoolChange(e, index, "end")}
+          />
+        </div>
+      ))}
+      <Button
+        className="submitBtn"
+        type="submit"
+        text="+ School"
+        onClick={handleAddSchool}
+      />
       <Button
         className="submitBtn"
         type="submit"
         text="Save"
-        onClick={handleButtonClick}
+        onClick={handleSaveSchools}
       />
     </>
   );

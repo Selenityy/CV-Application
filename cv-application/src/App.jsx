@@ -10,6 +10,7 @@ function App() {
   const [emailInput, setEmailInput] = useState("");
   const [summaryInput, setSummaryInput] = useState("");
   const [skillList, setSkillList] = useState([]);
+  const [schoolList, setSchoolList] = useState([]);
 
   const handleNameChange = (newName) => {
     setFullNameInput(newName);
@@ -35,6 +36,10 @@ function App() {
     setSkillList([...newSkills]);
   };
 
+  const handleAddSchool = (newSchool) => {
+    setSchoolList([...newSchool]);
+  };
+
   return (
     <>
       <h1 id="resumeTitle">Resume Builder</h1>
@@ -52,6 +57,7 @@ function App() {
             summary={summaryInput}
             onSummaryChange={handleSummaryChange}
             onSkillAdd={handleAddSkill}
+            onSchoolAdd={handleAddSchool}
           />
         </div>
         <div id="resumeDisplay">
@@ -62,6 +68,7 @@ function App() {
             email={emailInput}
             summary={summaryInput}
             skillList={skillList}
+            schoolList={schoolList}
           />
         </div>
       </div>

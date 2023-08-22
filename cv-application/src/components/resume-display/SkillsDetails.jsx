@@ -1,5 +1,4 @@
 /* eslint-disable react/prop-types */
-// import { useEffect, useState } from "react";
 
 function SkillDetails({ skillList }) {
   return (
