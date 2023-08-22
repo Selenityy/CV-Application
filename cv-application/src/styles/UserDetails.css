@@ -1,0 +1,10 @@
+#personalInput,
+#summaryInput,
+#skillsInput,
+#experienceInput,
+#educationInput {
+  background-color: white;
+  border-radius: 12px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
