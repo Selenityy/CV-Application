@@ -41,7 +41,7 @@ function ExperienceInput({ onJobAdd }) {
 
   return (
     <>
-      <h2>Experience Details</h2>
+      <h2 className="details-title">Experience Details</h2>
       {jobInputs.map((jobInput, index) => (
         <div key={jobInput.id} className="experienceDetails">
           <InputField

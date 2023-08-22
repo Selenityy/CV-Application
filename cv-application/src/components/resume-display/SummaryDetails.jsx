@@ -14,8 +14,8 @@ function SummaryDetails({ summary }) {
 
   return (
     <>
-      <h2>Summary</h2>
-      <h3>{placeholder}</h3>
+      <h2 id="summary-title">Summary</h2>
+      <h3 id="summary-text">{placeholder}</h3>
     </>
   );
 }

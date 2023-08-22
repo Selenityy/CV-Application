@@ -16,7 +16,7 @@ function SummaryInput({ onSummaryChange }) {
 
   return (
     <>
-      <h2>Summary Details</h2>
+      <h2 className="details-title">Summary Details</h2>
       <div id="summaryField" className="summaryDetails">
         <InputField
           label="Summary: "

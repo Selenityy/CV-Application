@@ -4,6 +4,7 @@ import ExperienceInput from "./cv-form/ExperienceInput";
 import PersonalInput from "./cv-form/PersonalInput";
 import SkillInput from "./cv-form/SkillInput";
 import SummaryInput from "./cv-form/SummaryInput";
+import "../styles/UserDetails.css";
 
 function UserDetails({
   onNameChange,

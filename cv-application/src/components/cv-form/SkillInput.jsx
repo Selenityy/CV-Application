@@ -24,7 +24,7 @@ function SkillInput({ onSkillAdd }) {
 
   return (
     <>
-      <h2>Skill Details</h2>
+      <h2 className="details-title">Skill Details</h2>
       {skillInputs.map((skillInput, index) => (
         <div key={skillInput.id} className="skillDetails">
           <InputField

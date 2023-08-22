@@ -39,7 +39,7 @@ function PersonalInput({
 
   return (
     <>
-      <h2>Personal Details</h2>
+      <h2 className="details-title">Personal Details</h2>
       <div id="nameField" className="personalDetails">
         <InputField
           label="Full Name: "

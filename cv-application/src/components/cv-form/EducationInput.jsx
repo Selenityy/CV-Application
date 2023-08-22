@@ -6,7 +6,7 @@ import { v4 as uuidv4 } from "uuid";
 
 function EducationInput({ onSchoolAdd }) {
   const [schoolInputs, setSchoolInputs] = useState([
-    { id: uuidv4(), name: "", degree: "", start: "", end: "" },
+    { id: uuidv4(), name: "", degree: "", dates: "" },
   ]);
 
   const handleSchoolChange = (e, index, property) => {
@@ -18,7 +18,7 @@ function EducationInput({ onSchoolAdd }) {
   const handleAddSchool = () => {
     setSchoolInputs([
       ...schoolInputs,
-      { id: uuidv4(), name: "", degree: "", start: "", end: "" },
+      { id: uuidv4(), name: "", degree: "", dates: "" },
     ]);
   };
 
@@ -29,7 +29,7 @@ function EducationInput({ onSchoolAdd }) {
 
   return (
     <>
-      <h2>Education Details</h2>
+      <h2 className="details-title">Education Details</h2>
       {schoolInputs.map((schoolInput, index) => (
         <div key={schoolInput.id} className="educationDetails">
           <InputField
@@ -49,20 +49,12 @@ function EducationInput({ onSchoolAdd }) {
             onChange={(e) => handleSchoolChange(e, index, "degree")}
           />
           <InputField
-            label="Start Date: "
-            id={`${schoolInput.id}-start`}
+            label="Dates: "
+            id={`${schoolInput.id}-dates`}
             type="text"
-            value={schoolInput.start}
+            value={schoolInput.dates}
             placeholder=""
-            onChange={(e) => handleSchoolChange(e, index, "start")}
-          />
-          <InputField
-            label="End Date: "
-            id={`${schoolInput.id}-end`}
-            type="text"
-            value={schoolInput.end}
-            placeholder=""
-            onChange={(e) => handleSchoolChange(e, index, "end")}
+            onChange={(e) => handleSchoolChange(e, index, "dates")}
           />
         </div>
       ))}

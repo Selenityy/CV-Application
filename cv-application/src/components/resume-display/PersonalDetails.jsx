@@ -44,10 +44,10 @@ function PersonalDetails({ fullName, phone, address, email }) {
 
   return (
     <>
-      <h2>{placeholderName}</h2>
-      <h3>{placeholderEmail}</h3>
-      <h3>{placeholderPhone}</h3>
-      <h3>{placeholderAddress}</h3>
+      <h2 id="resume-name">{placeholderName}</h2>
+      <h3 id="resume-email">{placeholderEmail}</h3>
+      <h3 id="resume-phone">{placeholderPhone}</h3>
+      <h3 id="resume-address">{placeholderAddress}</h3>
     </>
   );
 }

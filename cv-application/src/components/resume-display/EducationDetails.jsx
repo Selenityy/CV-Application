@@ -7,8 +7,7 @@ function EducationDetails({ schoolList }) {
       id: "placeholder",
       name: "Insert school name",
       degree: "Insert degree",
-      start: "Insert start date",
-      end: "Insert end date",
+      dates: "Insert start & end date",
     },
   ]);
 
@@ -21,8 +20,7 @@ function EducationDetails({ schoolList }) {
           id: "placeholder",
           name: "Insert school name",
           degree: "Insert degree",
-          start: "Insert start date",
-          end: "Insert end date",
+          dates: "Insert start & end date",
         },
       ]);
     }
@@ -30,14 +28,13 @@ function EducationDetails({ schoolList }) {
 
   return (
     <>
-      <h2>Education</h2>
+      <h2 id="education-title">Education</h2>
       <ul>
         {placeholder.map((schoolItem) => (
-          <li key={schoolItem.id}>
-            <p>{schoolItem.name}</p>
-            <p>{schoolItem.degree}</p>
-            <p>{schoolItem.start}</p>
-            <p>{schoolItem.end}</p>
+          <li key={schoolItem.id} className="school-items">
+            <p className="school-name">{schoolItem.name}</p>
+            <p className="school-degree">{schoolItem.degree}</p>
+            <p className="school-dates">{schoolItem.dates}</p>
           </li>
         ))}
       </ul>

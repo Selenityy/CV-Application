@@ -30,14 +30,14 @@ function ExperienceDetails({ jobList }) {
 
   return (
     <>
-      <h2>Experience</h2>
+      <h2 id="experience-title">Experience</h2>
       <ul>
         {placeholder.map((jobItem) => (
-          <li key={jobItem.id}>
-            <p>{jobItem.jobTitle}</p>
-            <p>{jobItem.companyName}</p>
-            <p>{jobItem.jobDates}</p>
-            <p>{jobItem.jobDescription}</p>
+          <li key={jobItem.id} className="job-items">
+            <p className="job-title">{jobItem.jobTitle}</p>
+            <p className="company-name">{jobItem.companyName}</p>
+            <p className="job-dates">{jobItem.jobDates}</p>
+            <p className="job-description">{jobItem.jobDescription}</p>
           </li>
         ))}
       </ul>

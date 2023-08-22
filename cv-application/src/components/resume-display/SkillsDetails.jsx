@@ -18,10 +18,10 @@ function SkillDetails({ skillList }) {
 
   return (
     <>
-      <h2>Skills</h2>
+      <h2 id="skills-title">Skills</h2>
       <ul>
         {placeholder.map((skillItem) => (
-          <li key={skillItem.id}>
+          <li key={skillItem.id} className="skills-list">
             <p>{skillItem.skill}</p>
           </li>
         ))}
