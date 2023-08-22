@@ -1,18 +1,45 @@
-function ExperienceDetails() {
+/* eslint-disable react/prop-types */
+import { useEffect, useState } from "react";
+
+function ExperienceDetails({ jobList }) {
+  const [placeholder, setPlaceholder] = useState([
+    {
+      id: "placeholder",
+      jobTitle: "Insert job title",
+      companyName: "Insert company name",
+      jobDates: "Insert start and end date",
+      jobDescription: "Insert job description",
+    },
+  ]);
+
+  useEffect(() => {
+    if (jobList.length > 0) {
+      setPlaceholder(jobList);
+    } else {
+      setPlaceholder([
+        {
+          id: "placeholder",
+          jobTitle: "Insert job title",
+          companyName: "Insert company name",
+          jobDates: "Insert start and end date",
+          jobDescription: "Insert job description",
+        },
+      ]);
+    }
+  }, [jobList]);
+
   return (
     <>
       <h2>Experience</h2>
-      <h3>Job 1</h3>
-      <h3>Company 1</h3>
-      <h3>Dates 1</h3>
       <ul>
-        <li>Description 1</li>
-      </ul>
-      <h3>Job 2</h3>
-      <h3>Company 2</h3>
-      <h3>Dates 2</h3>
-      <ul>
-        <li>Description 2</li>
+        {placeholder.map((jobItem) => (
+          <li key={jobItem.id}>
+            <p>{jobItem.jobTitle}</p>
+            <p>{jobItem.companyName}</p>
+            <p>{jobItem.jobDates}</p>
+            <p>{jobItem.jobDescription}</p>
+          </li>
+        ))}
       </ul>
     </>
   );

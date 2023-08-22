@@ -1,96 +1,94 @@
+/* eslint-disable react/prop-types */
 import { useState } from "react";
 import Button from "../utilities/Button";
 import InputField from "../utilities/InputField";
+import { v4 as uuidv4 } from "uuid";
 
-function ExperienceInput() {
-  const [jobTitle, setJobTitle] = useState("");
-  const [companyName, setCompanyName] = useState("");
-  const [startDate, setStartDate] = useState("");
-  const [endDate, setEndDate] = useState("");
-  const [jobDetails, setJobDetails] = useState("");
+function ExperienceInput({ onJobAdd }) {
+  const [jobInputs, setJobInputs] = useState([
+    {
+      id: uuidv4(),
+      jobTitle: "",
+      companyName: "",
+      jobDates: "",
+      jobDescription: "",
+    },
+  ]);
 
-  const handleTitleChange = (e) => {
-    setJobTitle(e.target.value);
+  const handleJobChange = (e, index, property) => {
+    const updatedJobs = [...jobInputs];
+    updatedJobs[index][property] = e.target.value;
+    setJobInputs(updatedJobs);
   };
 
-  const handleCompanyChange = (e) => {
-    setCompanyName(e.target.value);
+  const handleAddJob = () => {
+    setJobInputs([
+      ...jobInputs,
+      {
+        id: uuidv4(),
+        jobTitle: "",
+        companyName: "",
+        jobDates: "",
+        jobDescription: "",
+      },
+    ]);
   };
 
-  const handleStartDateChange = (e) => {
-    setStartDate(e.target.value);
-  };
-
-  const handleEndDateChange = (e) => {
-    setEndDate(e.target.value);
-  };
-
-  const handleJobDetailsChange = (e) => {
-    setJobDetails(e.target.value);
-  };
-
-  const handleButtonClick = (e) => {
-    e.preventDefault();
+  const handleSaveJobs = () => {
+    const existingJobs = jobInputs.filter((job) => job.jobTitle !== "");
+    onJobAdd(existingJobs);
   };
 
   return (
     <>
       <h2>Experience Details</h2>
-      <div id="companyField" className="experienceDetails">
-        <InputField
-          label="Company Name: "
-          id=""
-          type="text"
-          value={companyName}
-          placeholder=""
-          onChange={handleCompanyChange}
-        />
-      </div>
-      <div id="jobTitleField" className="experienceDetails">
-        <InputField
-          label="Job Title: "
-          id=""
-          type="text"
-          value={jobTitle}
-          placeholder=""
-          onChange={handleTitleChange}
-        />
-      </div>
-      <div id="startDateField" className="experienceDetails">
-        <InputField
-          label="Start Date: "
-          id=""
-          type="text"
-          value={startDate}
-          placeholder=""
-          onChange={handleStartDateChange}
-        />
-      </div>
-      <div id="endDateField" className="experienceDetails">
-        <InputField
-          label="End Date: "
-          id=""
-          type="text"
-          value={endDate}
-          placeholder=""
-          onChange={handleEndDateChange}
-        />
-      </div>
-      <div id="jobDetailsField" className="experienceDetails">
-        <InputField
-          label="Job Details: "
-          id=""
-          type="text"
-          value={jobDetails}
-          placeholder=""
-          onChange={handleJobDetailsChange}
-        />
-      </div>
+      {jobInputs.map((jobInput, index) => (
+        <div key={jobInput.id} className="experienceDetails">
+          <InputField
+            label="Job Title: "
+            id={`${jobInput.id}-jobTitle`}
+            type="text"
+            value={jobInput.jobTitle}
+            placeholder=""
+            onChange={(e) => handleJobChange(e, index, "jobTitle")}
+          />
+          <InputField
+            label="Company: "
+            id={`${jobInput.id}-companyName`}
+            type="text"
+            value={jobInput.companyName}
+            placeholder=""
+            onChange={(e) => handleJobChange(e, index, "companyName")}
+          />
+          <InputField
+            label="Dates: "
+            id={`${jobInput.id}-jobDates`}
+            type="text"
+            value={jobInput.jobDates}
+            placeholder=""
+            onChange={(e) => handleJobChange(e, index, "jobDates")}
+          />
+          <InputField
+            label="Description: "
+            id={`${jobInput.id}-jobDescription`}
+            type="text"
+            value={jobInput.jobDescription}
+            placeholder=""
+            onChange={(e) => handleJobChange(e, index, "jobDescription")}
+          />
+        </div>
+      ))}
+      <Button
+        className="submitBtn"
+        type="submit"
+        text="+ Experience"
+        onClick={handleAddJob}
+      />
       <Button
         className="submitBtn"
         type="submit"
         text="Save"
-        onClick={handleButtonClick}
+        onClick={handleSaveJobs}
       />
     </>
   );

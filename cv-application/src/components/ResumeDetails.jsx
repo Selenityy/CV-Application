@@ -12,6 +12,7 @@ function ResumeDetails({
   email,
   summary,
   skillList,
+  jobList,
   schoolList,
 }) {
   return (
@@ -31,7 +32,7 @@ function ResumeDetails({
         <SkillDetails skillList={skillList} />
       </section>
       <section id="experienceDetails">
-        <ExperienceDetails />
+        <ExperienceDetails jobList={jobList} />
       </section>
       <section id="educationDetails">
         <EducationDetails schoolList={schoolList} />

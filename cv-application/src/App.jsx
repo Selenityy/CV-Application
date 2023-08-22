@@ -10,6 +10,7 @@ function App() {
   const [emailInput, setEmailInput] = useState("");
   const [summaryInput, setSummaryInput] = useState("");
   const [skillList, setSkillList] = useState([]);
+  const [jobList, setJobList] = useState([]);
   const [schoolList, setSchoolList] = useState([]);
 
   const handleNameChange = (newName) => {
@@ -36,6 +37,10 @@ function App() {
     setSkillList([...newSkills]);
   };
 
+  const handleAddJob = (newJob) => {
+    setJobList([...newJob]);
+  };
+
   const handleAddSchool = (newSchool) => {
     setSchoolList([...newSchool]);
   };
@@ -57,6 +62,7 @@ function App() {
             summary={summaryInput}
             onSummaryChange={handleSummaryChange}
             onSkillAdd={handleAddSkill}
+            onJobAdd={handleAddJob}
             onSchoolAdd={handleAddSchool}
           />
         </div>
@@ -68,6 +74,7 @@ function App() {
             email={emailInput}
             summary={summaryInput}
             skillList={skillList}
+            jobList={jobList}
             schoolList={schoolList}
           />
         </div>

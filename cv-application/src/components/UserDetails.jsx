@@ -12,6 +12,7 @@ function UserDetails({
   onEmailChange,
   onSummaryChange,
   onSkillAdd,
+  onJobAdd,
   onSchoolAdd,
 }) {
   return (
@@ -31,7 +32,7 @@ function UserDetails({
         <SkillInput onSkillAdd={onSkillAdd} />
       </section>
       <section id="experienceInput">
-        <ExperienceInput />
+        <ExperienceInput onJobAdd={onJobAdd} />
       </section>
       <section id="educationInput">
         <EducationInput onSchoolAdd={onSchoolAdd} />
