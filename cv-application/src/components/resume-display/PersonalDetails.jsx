@@ -2,16 +2,19 @@
 import { useEffect, useState } from "react";
 
 function PersonalDetails({ fullName, phone, address, email }) {
-  const [placeholderName, setPlaceholderName] = useState("Full Name");
-  const [placeholderPhone, setPlaceholderPhone] = useState("Phone Number");
-  const [placeholderAddress, setPlaceholderAddress] = useState("Address");
-  const [placeholderEmail, setPlaceholderEmail] = useState("Email");
+  const [placeholderName, setPlaceholderName] = useState("Insert full name");
+  const [placeholderPhone, setPlaceholderPhone] = useState(
+    "Insert phone number"
+  );
+  const [placeholderAddress, setPlaceholderAddress] =
+    useState("Insert address");
+  const [placeholderEmail, setPlaceholderEmail] = useState("Insert email");
 
   useEffect(() => {
     if (fullName) {
       setPlaceholderName(fullName);
     } else {
-      setPlaceholderName("Full Name");
+      setPlaceholderName("Insert full name");
     }
   }, [fullName]);
 
@@ -19,7 +22,7 @@ function PersonalDetails({ fullName, phone, address, email }) {
     if (phone) {
       setPlaceholderPhone(phone);
     } else {
-      setPlaceholderPhone("Phone Number");
+      setPlaceholderPhone("Insert phone number");
     }
   }, [phone]);
 
@@ -27,7 +30,7 @@ function PersonalDetails({ fullName, phone, address, email }) {
     if (address) {
       setPlaceholderAddress(address);
     } else {
-      setPlaceholderAddress("Address");
+      setPlaceholderAddress("Insert address");
     }
   }, [address]);
 
@@ -35,7 +38,7 @@ function PersonalDetails({ fullName, phone, address, email }) {
     if (email) {
       setPlaceholderEmail(email);
     } else {
-      setPlaceholderEmail("Email");
+      setPlaceholderEmail("Insert email");
     }
   }, [email]);
 

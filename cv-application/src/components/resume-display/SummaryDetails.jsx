@@ -2,13 +2,13 @@ import { useEffect, useState } from "react";
 
 /* eslint-disable react/prop-types */
 function SummaryDetails({ summary }) {
-  const [placeholder, setPlaceholder] = useState("Insert text");
+  const [placeholder, setPlaceholder] = useState("Insert summary");
 
   useEffect(() => {
     if (summary) {
       setPlaceholder(summary);
     } else {
-      setPlaceholder("Insert Text");
+      setPlaceholder("Insert summary");
     }
   }, [summary]);
 
