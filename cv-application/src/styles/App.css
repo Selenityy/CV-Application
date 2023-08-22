@@ -1,0 +1,29 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  display: grid;
+  grid-template-rows: min-content 1fr;
+  grid-template-areas:
+    "title"
+    "body";
+}
+
+#content {
+  grid-area: body;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "inputs resume";
+}
+
+#resumeTitle {
+  grid-area: title;
+}
+
+#userInputs {
+  grid-area: inputs;
+}
+
+#resumeDisplay {
+  grid-area: resume;
+}
