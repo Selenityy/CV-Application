@@ -4,6 +4,7 @@ import ExperienceDetails from "./resume-display/ExperienceDetails";
 import PersonalDetails from "./resume-display/PersonalDetails";
 import SkillDetails from "./resume-display/SkillsDetails";
 import SummaryDetails from "./resume-display/SummaryDetails";
+import "../styles/ResumeDetails.css";
 
 function ResumeDetails({
   fullName,

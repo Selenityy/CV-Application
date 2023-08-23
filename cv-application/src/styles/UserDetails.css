@@ -5,6 +5,8 @@
 #educationInput {
   background-color: white;
   border-radius: 12px;
-  padding: 10px;
+  padding: 18px;
   margin-bottom: 10px;
+  width: 400px;
+  height: auto;
 }

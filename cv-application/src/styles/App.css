@@ -33,6 +33,14 @@
     0 13px 27px -5px rgba(50, 50, 93, 0.1),
     0 8px 16px -8px rgba(0, 0, 0, 0.25);
   background-color: white;
-  width: 21.59cm;
-  height: 27.94cm;
+  width: 816px;
+  height: 1056px;
+  display: grid;
+  grid-template-rows: 150px 105px 105px 591px 105px;
+  grid-template-areas:
+    "personal"
+    "summary"
+    "skills"
+    "experience"
+    "school";
 }

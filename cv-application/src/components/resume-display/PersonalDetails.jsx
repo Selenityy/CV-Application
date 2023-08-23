@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import { useEffect, useState } from "react";
+import "../../styles/PersonalDetails.css";
 
 function PersonalDetails({ fullName, phone, address, email }) {
   const [placeholderName, setPlaceholderName] = useState("Insert full name");

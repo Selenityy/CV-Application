@@ -1,0 +1,15 @@
+#resume-name {
+  grid-area: name;
+}
+
+#resume-email {
+  grid-area: email;
+}
+
+#resume-phone {
+  grid-area: phone;
+}
+
+#resume-address {
+  grid-area: address;
+}

@@ -2,6 +2,7 @@
 import Button from "../utilities/Button";
 import InputField from "../utilities/InputField";
 import { useState } from "react";
+import "../../styles/PersonalInput.css";
 
 function PersonalInput({
   onNameChange,

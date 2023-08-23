@@ -1,12 +1,11 @@
 body {
-  background-color: #f3f4f6;
+  /* background-color: #f3f4f6; */
+  background-color: lightpink;
 }
 
-h1 {
-  margin: 0px;
-}
-
-h2 {
+h1,
+h2,
+h3 {
   margin: 0px;
 }
 
