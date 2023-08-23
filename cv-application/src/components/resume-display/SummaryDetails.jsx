@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import "../../styles/SummaryDetails.css";
 
 /* eslint-disable react/prop-types */
 function SummaryDetails({ summary }) {
@@ -15,6 +16,7 @@ function SummaryDetails({ summary }) {
   return (
     <>
       <h2 id="summary-title">Summary</h2>
+      <hr></hr>
       <h3 id="summary-text">{placeholder}</h3>
     </>
   );
