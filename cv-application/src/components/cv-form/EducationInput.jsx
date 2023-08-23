@@ -3,6 +3,7 @@ import { useState } from "react";
 import Button from "../utilities/Button";
 import InputField from "../utilities/InputField";
 import { v4 as uuidv4 } from "uuid";
+import "../../styles/EducationInput.css";
 
 function EducationInput({ onSchoolAdd }) {
   const [schoolInputs, setSchoolInputs] = useState([
@@ -59,7 +60,7 @@ function EducationInput({ onSchoolAdd }) {
         </div>
       ))}
       <Button
-        className="submitBtn"
+        className="addBtn"
         type="submit"
         text="+ School"
         onClick={handleAddSchool}

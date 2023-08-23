@@ -3,6 +3,7 @@ import { useState } from "react";
 import Button from "../utilities/Button";
 import InputField from "../utilities/InputField";
 import { v4 as uuidv4 } from "uuid";
+import "../../styles/ExperienceInput.css";
 
 function ExperienceInput({ onJobAdd }) {
   const [jobInputs, setJobInputs] = useState([
@@ -79,7 +80,7 @@ function ExperienceInput({ onJobAdd }) {
         </div>
       ))}
       <Button
-        className="submitBtn"
+        className="addBtn"
         type="submit"
         text="+ Experience"
         onClick={handleAddJob}

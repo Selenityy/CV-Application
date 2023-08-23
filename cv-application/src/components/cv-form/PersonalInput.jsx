@@ -43,7 +43,7 @@ function PersonalInput({
       <h2 className="details-title">Personal Details</h2>
       <div id="nameField" className="personalDetails">
         <InputField
-          label="Full Name: "
+          label="Full name: "
           id="name"
           htmlFor="name"
           type="text"
@@ -65,7 +65,7 @@ function PersonalInput({
       </div>
       <div id="phoneField" className="personalDetails">
         <InputField
-          label="Phone Number: "
+          label="Phone number: "
           id="phone"
           htmlFor="phone"
           type="text"

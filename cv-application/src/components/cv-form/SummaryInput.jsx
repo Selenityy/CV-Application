@@ -2,6 +2,7 @@
 import InputField from "../utilities/InputField";
 import Button from "../utilities/Button";
 import { useState } from "react";
+import "../../styles/SummaryInput.css";
 
 function SummaryInput({ onSummaryChange }) {
   const [summary, setSummary] = useState("");

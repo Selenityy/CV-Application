@@ -3,6 +3,7 @@ import { useState } from "react";
 import Button from "../utilities/Button";
 import InputField from "../utilities/InputField";
 import { v4 as uuidv4 } from "uuid";
+import "../../styles/SkillInput.css";
 
 function SkillInput({ onSkillAdd }) {
   const [skillInputs, setSkillInputs] = useState([{ id: uuidv4(), skill: "" }]);
@@ -38,7 +39,7 @@ function SkillInput({ onSkillAdd }) {
         </div>
       ))}
       <Button
-        className="submitBtn"
+        className="addBtn"
         type="submit"
         text="+ Skill"
         onClick={handleAddSkill}
