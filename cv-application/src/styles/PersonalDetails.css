@@ -1,15 +1,26 @@
 #resume-name {
   grid-area: name;
+  color: #295ca3;
+  font-size: 32px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0px;
 }
 
 #resume-email {
   grid-area: email;
+  font-size: 16px;
+  font-weight: 100;
 }
 
 #resume-phone {
   grid-area: phone;
+  font-size: 16px;
+  font-weight: 100;
 }
 
 #resume-address {
   grid-area: address;
+  font-size: 16px;
+  font-weight: 100;
 }
