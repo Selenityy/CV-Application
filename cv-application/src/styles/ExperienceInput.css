@@ -5,10 +5,7 @@
   letter-spacing: 0.5px;
 }
 
-#nameField,
-#emailField,
-#phoneField,
-#addressField {
+.experienceDetails {
   display: flex;
   flex-direction: column;
   margin-bottom: 10px;
@@ -29,4 +26,13 @@ label {
   padding-left: 2px;
   color: #1f2937;
   font-weight: 600;
+}
+
+[id$="jobTitle"],
+[id$="companyName"],
+[id$="jobDates"],
+[id$="jobDescription"] {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
 }

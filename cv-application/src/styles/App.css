@@ -20,6 +20,9 @@
 
 #resumeTitle {
   grid-area: title;
+  color: transparent;
+  margin: 0px;
+  font-size: 0.2rem;
 }
 
 #userInputs {

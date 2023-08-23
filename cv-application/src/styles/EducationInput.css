@@ -5,10 +5,7 @@
   letter-spacing: 0.5px;
 }
 
-#nameField,
-#emailField,
-#phoneField,
-#addressField {
+.educationDetails {
   display: flex;
   flex-direction: column;
   margin-bottom: 10px;
@@ -29,4 +26,12 @@ label {
   padding-left: 2px;
   color: #1f2937;
   font-weight: 600;
+}
+
+[id$="-name"],
+[id$="-degree"],
+[id$="-dates"] {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
 }

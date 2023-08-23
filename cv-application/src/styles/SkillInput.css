@@ -5,10 +5,7 @@
   letter-spacing: 0.5px;
 }
 
-#nameField,
-#emailField,
-#phoneField,
-#addressField {
+.skillDetails {
   display: flex;
   flex-direction: column;
   margin-bottom: 10px;
