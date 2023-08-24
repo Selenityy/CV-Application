@@ -1,4 +1,5 @@
 import { useEffect, useState, useMemo } from "react";
+import "../../styles/SkillDetails.css";
 
 /* eslint-disable react/prop-types */
 function SkillDetails({ skillList }) {
@@ -19,7 +20,8 @@ function SkillDetails({ skillList }) {
   return (
     <>
       <h2 id="skills-title">Skills</h2>
-      <ul>
+      <hr></hr>
+      <ul id="allSkills">
         {placeholder.map((skillItem) => (
           <li key={skillItem.id} className="skills-list">
             <p>{skillItem.skill}</p>

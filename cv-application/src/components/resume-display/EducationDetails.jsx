@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import "../../styles/EducationDetails.css";
 
 /* eslint-disable react/prop-types */
 function EducationDetails({ schoolList }) {
@@ -29,6 +30,7 @@ function EducationDetails({ schoolList }) {
   return (
     <>
       <h2 id="education-title">Education</h2>
+      <hr></hr>
       <ul>
         {placeholder.map((schoolItem) => (
           <li key={schoolItem.id} className="school-items">
