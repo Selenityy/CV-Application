@@ -1,5 +1,5 @@
 #personalDetails {
-  grid-area: personal;
+  /* grid-area: personal; */
   display: flex;
   flex-direction: column;
   line-height: 1.6;
@@ -12,7 +12,7 @@
     "email"; */
 }
 
-#summaryDetails {
+/* #summaryDetails {
   grid-area: summary;
 }
 
@@ -26,4 +26,4 @@
 
 #educationDetails {
   grid-area: school;
-}
+} */

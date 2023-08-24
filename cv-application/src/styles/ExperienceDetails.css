@@ -1,0 +1,53 @@
+#experience-title {
+  color: #295ca3;
+  text-transform: uppercase;
+  font-size: 18px;
+}
+
+.job-items {
+  font-size: 16px;
+  font-weight: 100;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+#allJobs {
+  margin: 0px;
+  padding: 0px;
+  display: grid;
+  align-items: start;
+  justify-items: start;
+  grid-auto-rows: min-content;
+  row-gap: 20px;
+  margin-top: 20px;
+}
+
+.job-title,
+.company-name,
+.job-dates,
+.job-description {
+  margin: 0px;
+  padding: 0px;
+  line-height: 1.6;
+}
+
+.job-title {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.job-dates {
+  color: #4b5563;
+}
+
+.job-description {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+}
+
+.bullet-circle {
+  font-size: 5px;
+}
