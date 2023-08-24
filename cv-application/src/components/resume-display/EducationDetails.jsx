@@ -31,7 +31,7 @@ function EducationDetails({ schoolList }) {
     <>
       <h2 id="education-title">Education</h2>
       <hr></hr>
-      <ul>
+      <ul id="allSchools">
         {placeholder.map((schoolItem) => (
           <li key={schoolItem.id} className="school-items">
             <p className="school-name">{schoolItem.name}</p>
